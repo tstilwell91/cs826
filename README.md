@@ -103,7 +103,7 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
 
 ## Step 2: Metadata Preparation
 
-Prepare the metadata for analysis by mapping filenames to their corresponding `case_id`. This mapping creates a common key that is essential for combining the WSI and RNA-seq datasets.
+Prepare the metadata for analysis. 
 
 1. Open the `case_mappings.ipynb` notebook in Jupyter.
 2. Update the `metadata_path` to point to the Metadata file uploaded in Step 1.
@@ -112,10 +112,7 @@ Prepare the metadata for analysis by mapping filenames to their corresponding `c
 
 **Output**: `file_case_mapping.csv`  
 
-This file will be used in subsequent steps of the project.
-
-**Output Explanation**:
-`file_case_mapping.csv` contains the mapping of filenames to `case_id` and serves as a crucial key for combining the RNA-Seq and WSI datasets. This will be used as input in future steps of the project.
+This file contains the mapping of filenames to `case_id` and serves as a crucial key for combining the RNA-Seq and WSI datasets. This will be used as input in future steps of the project.
 
 ---
 
