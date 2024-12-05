@@ -122,19 +122,19 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
      `/home/tstil004/gdc-client/gdc-client`
 
    **Example Directory Structure**:
-```plaintext
-/path/to/datasets/
-├── rna-seq/
-│   ├── directory1/
-│   │   └── rna-seq1.tsv
-│   ├── directory2/
-│       └── rna-seq2.tsv
-├── wsi/
-│   ├── directory1/
-│   │   └── wsi1.svs
-│   ├── directory2/
-│       └── wsi2.svs
-```
+   ```plaintext
+   /path/to/datasets/
+   ├── rna-seq/
+   │   ├── directory1/
+   │   │   └── rna-seq1.tsv
+   │   ├── directory2/
+   │       └── rna-seq2.tsv
+   ├── wsi/
+   │   ├── directory1/
+   │   │   └── wsi1.svs
+   │   ├── directory2/
+   │       └── wsi2.svs
+   ```
 ---
 
 ## Step 2: Metadata Preparation
