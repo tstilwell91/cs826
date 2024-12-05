@@ -114,6 +114,9 @@ Prepare the metadata for analysis by mapping filenames to their corresponding `c
 
 This file will be used in subsequent steps of the project.
 
+**Output Explanation**:
+`file_case_mapping.csv` contains the mapping of filenames to `case_id` and serves as a crucial key for combining the RNA-Seq and WSI datasets. This will be used as input in future steps of the project.
+
 ---
 
 ## Troubleshooting
