@@ -110,7 +110,7 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
    - Transfer the downloaded files (Metadata, Manifest, and Token) to your Wahab home directory.
 
 5. **Download RNA-Seq and WSI Files Using gdc-client**
-   Use the `gdc-client` to download the files listed in the manifest. Replace the file paths in the command below with the appropriate paths for your manifest and token.  You can download all the data at once or create two separate manifests to download the data separately.
+   - Use the `gdc-client` to download the files listed in the manifest. Replace the file paths in the command below with the appropriate paths for your manifest and token.  You can download all the data at once or create two separate manifests to download the data separately.
 
    ### Command Example
 
@@ -121,20 +121,7 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
    - **Note**: The `gdc-client` is not installed centrally. Its location on the Wahab cluster is:
      `/home/tstil004/gdc-client/gdc-client`
 
-**Example Directory Structure**:
-/path/to/datasets/
-├── rna-seq/
-│   ├── directory1/
-│   │   └── rna-seq1.tsv
-│   ├── directory2/
-│       └── rna-seq2.tsv
-├── wsi/
-│   ├── directory1/
-│   │   └── wsi1.svs
-│   ├── directory2/
-│       └── wsi2.svs
-
-
+   **Example Directory Structure**:
 ```plaintext
 /path/to/datasets/
 ├── rna-seq/
@@ -147,7 +134,7 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
 │   │   └── wsi1.svs
 │   ├── directory2/
 │       └── wsi2.svs
-
+```
 ---
 
 ## Step 2: Metadata Preparation
