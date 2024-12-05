@@ -130,8 +130,8 @@ This file contains the combined features for each `case_id` and will be used in 
 
 ---
 
-## Improvments
-Instead of running these scripts individually and generating CSV files, it makes more sense to combine them all into one step and use data frames instead.  This will improve performance. 
+## Improvements  
+Rather than running these scripts individually to generate separate CSV files, it would be more efficient to integrate them into a single step using data frames. This approach not only simplifies the workflow but also enhances performance.
 
 ---
 
