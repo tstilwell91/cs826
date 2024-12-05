@@ -9,13 +9,16 @@
 3. [Prerequisites](#prerequisites)
 4. [Step 1: Data Retrieval](#step-1-data-retrieval)
 5. [Step 2: Metadata Preparation](#step-2-metadata-preparation)
-6. [Troubleshooting](#troubleshooting)
+6. [Step 3: RNA-Seq Feature Extraction](#step-3-rna-seq-feature-extraction)
+7. [Step 4: WSI Feature Extraction](#step-4-wsi-feature-extraction)
+8. [Step 5: Concatenate Data](#step-5-concatenate-data)
+9. [Improvements](#improvements)
 
 ---
 
 ## Motivation
 
-This project is inspired by recent advancements in computational pathology and genomics integration, particularly in cancer research. The publication "[Integrative analysis of whole slide imaging and RNA-Seq data in prostate cancer](https://www.nature.com/articles/s41598-023-46392-6)" demonstrates the potential for combining RNA-Seq and whole slide imaging (WSI) data to uncover novel insights into prostate cancer. Our work builds upon these ideas to enable efficient data processing and analysis in a high-performance computing environment.
+This project is inspired by recent advancements in computational pathology and genomics integration, particularly in cancer research. The publication "[Integrative analysis of whole slide imaging and RNA-Seq data in prostate cancer](https://www.nature.com/articles/s41598-023-46392-6)" demonstrates the potential for combining RNA-Seq and whole slide imaging (WSI) data to uncover novel insights into prostate cancer. Our work will build upon these ideas to include genomic data and telomere features for prostate cancer.
 
 ---
 
@@ -107,7 +110,9 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
    - Transfer the downloaded files (Metadata, Manifest, and Token) to your Wahab home directory.
 
 5. **Download RNA-Seq and WSI Files Using gdc-client**
-   - Use the `gdc-client` to download the files listed in the manifest. Replace the file paths in the command below with the appropriate paths for your manifest and token:
+   Use the `gdc-client` to download the files listed in the manifest. Replace the file paths in the command below with the appropriate paths for your manifest and token.  You can download all the data at once or create two separate manifests to download the data separately.
+
+   ### Command Example
 
      ```bash
      $ gdc-client download -m gdc_manifest.txt -t gdc-user-token.txt
@@ -115,6 +120,19 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
 
    - **Note**: The `gdc-client` is not installed centrally. Its location on the Wahab cluster is:
      `/home/tstil004/gdc-client/gdc-client`
+
+**Example Directory Structure**:
+/path/to/datasets/
+├── rna-seq/
+│   ├── directory1/
+│   │   └── rna-seq1.tsv
+│   ├── directory2/
+│       └── rna-seq2.tsv
+├── wsi/
+│   ├── directory1/
+│   │   └── wsi1.svs
+│   ├── directory2/
+│       └── wsi2.svs
 
 ---
 
@@ -171,7 +189,7 @@ This file contains the extracted WSI features mapped to their corresponding `cas
 
 ---
 
-## Step ?: Concatenate Data
+## Step 5: Concatenate Data
 
 Combine the RNA-Seq and WSI datasets into a single features file.
 
@@ -187,17 +205,3 @@ This file contains the combined features for each `case_id` and will be used in 
 
 ## Improvements  
 Rather than running these scripts individually to generate separate CSV files, it would be more efficient to integrate them into a single step using data frames. This approach not only simplifies the workflow but also enhances performance.
-
----
-
-## Troubleshooting
-
-1. **Jupyter Notebook Won’t Launch**  
-   - Ensure the cluster partition is set to `gpu`.  
-   - Verify that the Python environment is correctly activated with `crun`.
-
-2. **Metadata File Not Found**  
-   - Check that the correct path is specified in `case_mappings.ipynb`.
-
----
-
