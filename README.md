@@ -149,6 +149,28 @@ This file contains the extracted gene expression features mapped to their corres
 
 ---
 
+## Step 4: WSI Feature Extraction
+
+A separate manifest was created for the WSI data, allowing it to be downloaded independently from the RNA-Seq data.
+
+### Instructions
+
+1. Open the `wsi-features-extraction.ipynb` notebook in Jupyter.
+2. Update the `DATA_DIR` variable to point to the directory containing the WSI files downloaded using the `gdc-client`.
+3. Update the `CASE_MAPPING_FILE` variable to reference the file generated in **Step 2**.
+4. Set the following parameters as used in the referenced paper:
+   - `EPOCHS = 100`
+   - `NUM_TILES = 128`
+   - `FEATURE_DIM = 512`
+5. Adjust the `BATCH_SIZE` and `NUM_WORKERS` values based on the available computational resources.
+6. Run the notebook to process the WSI data and generate the WSI features file.
+
+**Output**: `extracted_wsi_features.csv`
+
+This file contains the extracted WSI features mapped to their corresponding `case_id`.
+
+---
+
 ## Step ?: Concatenate Data
 
 Combine the RNA-Seq and WSI datasets into a single features file.
