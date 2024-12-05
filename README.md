@@ -70,6 +70,12 @@ All work for this project is performed on the ODU Wahab cluster. Follow the step
 
 Retrieve the necessary data for this project from the [GDC Data Portal](https://portal.gdc.cancer.gov/projects/TCGA-PRAD):
 
+### Data Information
+- **Total Files**: 1,107
+- **Total Size**: 133.4 GB
+- **Number of Cases**: 498
+
+### Instructions
 1. **Access the Project Page**  
    Navigate to the TCGA-PRAD project page using the link above.
 
@@ -93,11 +99,22 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
    - Under **Tissue Type**, select `Tumor`.  
    - Click **Add All Files to Cart**.
 
-4. **Download and Upload Data**  
+4. **Download and Upload Data**
    - Navigate to your **Cart** and download the required files:
-     - **Metadata**: Click **Download Associated Data -> Metadata**.  
-     - **Manifest**: Click **Download Cart -> Manifest**.  
-   - Transfer these files to your Wahab home directory.
+     - **Metadata**: Click **Download Associated Data -> Metadata**.
+     - **Manifest**: Click **Download Cart -> Manifest**.
+   - Download your **User Token**: Click on your Profile and select **Download Token**.
+   - Transfer the downloaded files (Metadata, Manifest, and Token) to your Wahab home directory.
+
+5. **Download RNA-Seq and WSI Files Using gdc-client**
+   - Use the `gdc-client` to download the files listed in the manifest. Replace the file paths in the command below with the appropriate paths for your manifest and token:
+
+     ```bash
+     $ gdc-client download -m gdc_manifest.txt -t gdc-user-token.txt
+     ```
+
+   - **Note**: The `gdc-client` is not installed centrally. Its location on the Wahab cluster is:
+     `/home/tstil004/gdc-client/gdc-client`
 
 ---
 
@@ -113,6 +130,22 @@ Prepare the metadata for analysis.
 **Output**: `file_case_mapping.csv`  
 
 This file contains the mapping of filenames to `case_id` and serves as a crucial key for combining the RNA-Seq and WSI datasets. This will be used as input in future steps of the project.
+
+---
+
+## Step 3: RNA-Seq Feature Extraction
+
+A separate manifest was created for the RNA-Seq data, allowing it to be downloaded independently from the WSI data.
+
+### Instructions
+1. Open the `rna-seq-features-extraction.ipynb` notebook in Jupyter.
+2. Update the `datasets_dir` variable to point to the directory containing the RNA-Seq files downloaded earlier using the `gdc-client`.
+3. Update the `case_mapping_file` variable to reference the file generated in **Step 2**.
+4. Run the notebook to process the RNA-Seq data and generate the RNA-Seq features file.
+
+**Output**: `combined_rna_features.csv`  
+
+This file contains the extracted gene expression features mapped to their corresponding `case_id`.
 
 ---
 
