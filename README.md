@@ -18,7 +18,7 @@
 
 ## Motivation
 
-This project is inspired by recent advancements in computational pathology and genomics integration, particularly in cancer research. The publication "[Integrative analysis of whole slide imaging and RNA-Seq data in prostate cancer](https://www.nature.com/articles/s41598-023-46392-6)" demonstrates the potential for combining RNA-Seq and whole slide imaging (WSI) data to uncover novel insights into prostate cancer. Our work will build upon these ideas to include genomic data and telomere features for prostate cancer.
+This project is inspired by recent advancements in computational pathology and genomics integration, particularly in cancer research. The publication "[Graph-based multi-modality integration for prediction of cancer subtype and severity](https://www.nature.com/articles/s41598-023-46392-6)" demonstrates the potential for combining RNA-Seq and whole slide imaging (WSI) data to uncover novel insights into prostate cancer. Our work will build upon these ideas to include genomic data and telomere features for prostate cancer.
 
 ---
 
