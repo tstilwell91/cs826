@@ -192,7 +192,7 @@ This file contains the extracted WSI features mapped to their corresponding `cas
 
 ## Step 5: Concatenate Data
 
-Combine the RNA-Seq and WSI datasets into a single features file.
+Combine the RNA-Seq and WSI datasets into a single features file.  This allows for integrated analysis that leverages both genomic and imaging data.
 
 1. Open the `concat.ipynb` notebook in Jupyter.
 2. Update the paths for `rna_features` and `wsi_features` to point to the output files generated in the previous steps.
@@ -206,3 +206,8 @@ This file contains the combined features for each `case_id` and will be used in 
 
 ## Improvements  
 Rather than running these scripts individually to generate separate CSV files, it would be more efficient to integrate them into a single step using data frames. This approach not only simplifies the workflow but also enhances performance.
+
+**Suggested Approach:** Combine all feature extraction steps into a Python script that utilizes pandas data frames to streamline data processing. This script could:
+- Load and map metadata
+- Process RNA-Seq and WSI features
+- Concatenate features into a single file
