@@ -106,13 +106,32 @@ Retrieve the necessary data for this project from the [GDC Data Portal](https://
 Prepare the metadata for analysis. 
 
 1. Open the `case_mappings.ipynb` notebook in Jupyter.
-2. Update the `metadata_path` to point to the Metadata file uploaded in Step 1.
+2. Update `metadata_path` to point to the Metadata file uploaded in Step 1.
 3. Specify the output file location.
 4. Run the notebook to generate the mapping file.
 
 **Output**: `file_case_mapping.csv`  
 
 This file contains the mapping of filenames to `case_id` and serves as a crucial key for combining the RNA-Seq and WSI datasets. This will be used as input in future steps of the project.
+
+---
+
+## Step ?: Concatenate Data
+
+Combine the RNA-Seq and WSI datasets into a single features file.
+
+1. Open the `concat.ipynb` notebook in Jupyter.
+2. Update the paths for `rna_features` and `wsi_features` to point to the output files generated in the previous steps.
+3. Run the notebook to generate the combined features file.
+
+**Output**: `combined_features.csv`  
+
+This file contains the combined features for each `case_id` and will be used in the next step to generate the Individual Networks (IN).
+
+---
+
+## Improvments
+Instead of running these scripts individually and generating CSV files, it makes more sense to combine them all into one step and use data frames instead.  This will improve performance. 
 
 ---
 
