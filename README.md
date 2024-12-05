@@ -40,20 +40,24 @@ All work for this project is performed on the ODU Wahab cluster. Follow the step
    - For interactive work, access the Wahab OnDemand portal:  
      [ODU Wahab OnDemand](https://ondemand.wahab.hpc.odu.edu).
 
-3. **Set Up Python Prerequisites**  
-   - Connect to the cluster over SSH or via the OnDemand portal under **Cluster Access**.  
-   - Load the necessary modules and activate the Python environment:
+3. **Clone the Repository**  
+   - Connect to the cluster over SSH or via the OnDemand portal under **Cluster Access**.
+   - Clone this repository to your Wahab home directory:
+
+     ```bash
+     git clone https://github.com/tstilwell91/cs826.git
+
+4. **Set Up Python Prerequisites**
+   - Load the necessary modules and create the Python environment:
 
      ```bash
      module load container_env pytorch-gpu/2.2.0
      crun -c -p ~/envs/cs826
      ```
-
-4. **Clone the Repository**  
-   - Clone this repository to your Wahab home directory:
+   - Install the Python dependencies into the environment:
 
      ```bash
-     git clone https://github.com/tstilwell91/cs826.git
+     crun -p ~/envs/cs826 python -m pip install -r requirements.txt
      ```
 
 5. **Launch Jupyter on Wahab**  

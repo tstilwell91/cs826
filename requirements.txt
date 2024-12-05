@@ -1,1 +1,2 @@
-openslide
+openslide-python
+openslide-bin
