@@ -63,6 +63,7 @@ all_features_pivot = all_features_df.pivot_table(index='case_id', columns='gene_
 all_features_pivot.reset_index(inplace=True)
 
 # Step 7: Save the combined features to a CSV file
-all_features_pivot.to_csv('combined_rna_features.csv', index=False)
+all_features_pivot.to_csv('combined_rna_features2.csv', index=False)
 
 print("RNA-Seq feature extraction complete. Combined features saved to 'combined_rna_features.csv'")
+

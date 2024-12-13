@@ -17,4 +17,4 @@ for entry in metadata:
 mapping_df = pd.DataFrame(mapping)
 
 # Save mapping to CSV for later use
-mapping_df.to_csv("/home/tstil004/phd/multi-omics/file_case_mapping.csv", index=False)
+mapping_df.to_csv("/home/tstil004/phd/multi-omics/file_case_mapping2.csv", index=False)
